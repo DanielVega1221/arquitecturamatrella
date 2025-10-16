@@ -4,6 +4,7 @@ import './Navbar.css';
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,19 +17,38 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${visible ? 'navbar--visible' : 'navbar--hidden'}`}>
       <div className="navbar__container">
-        <a href="#" className="navbar__logo">DM</a>
+        <a href="#" className="navbar__logo" onClick={handleLinkClick}>DM</a>
         
-        <ul className="navbar__menu">
-          <li><a href="#" className="navbar__link">Inicio</a></li>
-          <li><a href="#sobre-mi" className="navbar__link">Sobre Mí</a></li>
-          <li><a href="#proyectos" className="navbar__link">Proyectos</a></li>
-          <li><a href="#contacto" className="navbar__link">Contacto</a></li>
+        <button 
+          className={`navbar__hamburger ${isMenuOpen ? 'navbar__hamburger--open' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul className={`navbar__menu ${isMenuOpen ? 'navbar__menu--open' : ''}`}>
+          <li><a href="#" className="navbar__link" onClick={handleLinkClick}>Inicio</a></li>
+          <li><a href="#sobre-mi" className="navbar__link" onClick={handleLinkClick}>Sobre Mí</a></li>
+          <li><a href="#proyectos" className="navbar__link" onClick={handleLinkClick}>Proyectos</a></li>
+          <li><a href="#contacto" className="navbar__link" onClick={handleLinkClick}>Contacto</a></li>
+          <li><a href="#contacto" className="navbar__cta" onClick={handleLinkClick}>Trabajemos</a></li>
         </ul>
 
-        <a href="#contacto" className="navbar__cta">Trabajemos</a>
+        {isMenuOpen && <div className="navbar__overlay" onClick={() => setIsMenuOpen(false)}></div>}
       </div>
     </nav>
   );

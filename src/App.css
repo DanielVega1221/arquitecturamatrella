@@ -156,15 +156,72 @@ a {
 .font-heading { font-family: var(--font-heading); }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   :root {
-    --text-5xl: 2.5rem;
-    --text-4xl: 2rem;
+    --text-5xl: 2rem;
+    --text-4xl: 1.75rem;
+    --text-3xl: 1.5rem;
+    --space-4xl: 2.5rem;
+    --space-3xl: 2rem;
+    --space-2xl: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  :root {
+    --text-5xl: 2.25rem;
+    --text-4xl: 1.875rem;
     --space-4xl: 3rem;
   }
   
   .container {
     padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  :root {
+    --text-5xl: 2.75rem;
+    --text-4xl: 2.125rem;
+    --space-4xl: 3.5rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+/* Responsive utilities */
+.hide-mobile {
+  display: block;
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+
+  .show-mobile {
+    display: block;
+  }
+}
+
+/* Container responsive max-widths */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
   }
 }
 

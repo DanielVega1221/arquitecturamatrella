@@ -228,19 +228,71 @@
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+@media (max-width: 480px) {
+  .footer {
+    padding: 50px 15px 25px;
+  }
+
   .footer__content {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .footer__brand {
-    grid-column: 1 / -1;
     max-width: 100%;
+  }
+
+  .footer__logo {
+    font-size: 24px;
+  }
+
+  .footer__tagline {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .footer__description,
+  .footer__location {
+    font-size: 14px;
+  }
+
+  .footer__title {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .footer__list {
+    gap: 10px;
+  }
+
+  .footer__link {
+    font-size: 14px;
+  }
+
+  .footer__social-links {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .footer__social-link {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer__bottom {
+    margin-top: 30px;
+  }
+
+  .footer__copyright p {
+    font-size: 12px;
+  }
+
+  .footer__credit {
+    font-size: 11px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 640px) and (min-width: 481px) {
   .footer {
     padding: 60px 20px 30px;
   }
@@ -264,6 +316,54 @@
 
   .footer__copyright p {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 641px) {
+  .footer__content {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 968px) and (min-width: 769px) {
+  .footer__content {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) and (min-width: 969px) {
+  .footer {
+    padding: 70px 25px 30px;
+  }
+
+  .footer__content {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+  }
+
+  .footer__brand {
+    max-width: 400px;
+    grid-column: auto;
+  }
+}
+
+/* Large tablets and small desktops */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .footer__content {
+    gap: 55px;
   }
 }
 

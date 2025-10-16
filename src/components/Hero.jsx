@@ -53,7 +53,7 @@ const Hero = () => {
             Especializada en diseño de interiores contemporáneos y arquitectura residencial.
           </p>
           <div className="hero__buttons">
-            <a href="#contacto" className="btn btn--primary">
+            <a href="#proyectos" className="btn btn--primary">
               <span>Ver Proyectos</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
