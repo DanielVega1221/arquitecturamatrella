@@ -1,0 +1,230 @@
+/* ===============================================
+   ARCHITECT PORTFOLIO - SISTEMA ELEGANTE
+   =============================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ===== NUEVA PALETA DE COLORES MODERNA ===== */
+:root {
+  /* Colores principales - Paleta moderna y elegante */
+  --color-dark-purple: #1F1D36;     /* Púrpura oscuro - fondo principal */
+  --color-purple: #3F3351;          /* Púrpura medio - acentos */
+  --color-mauve: #864879;           /* Malva - destacados */
+  --color-pink: #E9A6A6;            /* Rosa suave - acentos */
+  --color-white: #FFFFFF;           /* Blanco puro */
+  --color-light: #F5F5F5;           /* Gris muy claro */
+  
+  /* Variaciones para fondos y textos */
+  --color-bg-primary: #1F1D36;
+  --color-bg-secondary: #3F3351;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #E9A6A6;
+  --color-accent: #864879;
+  
+  /* Tipografías */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Tamaños de texto */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.5rem;
+  
+  /* Espaciados */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  
+  /* Efectos */
+  --shadow-sm: 0 2px 8px rgba(43, 43, 43, 0.08);
+  --shadow-md: 0 4px 16px rgba(43, 43, 43, 0.12);
+  --shadow-lg: 0 8px 32px rgba(43, 43, 43, 0.16);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+}
+
+/* ===== RESET Y BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== TIPOGRAFÍA ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--text-5xl); font-weight: 600; }
+h2 { font-size: var(--text-4xl); font-weight: 500; }
+h3 { font-size: var(--text-3xl); font-weight: 500; }
+h4 { font-size: var(--text-2xl); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section {
+  padding: var(--space-4xl) 0;
+}
+
+/* ===== COMPONENTES BASE ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md) var(--space-xl);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn--primary {
+  background-color: var(--color-gold);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: #B8965A;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-charcoal);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+/* ===== UTILIDADES ===== */
+.text-center { text-align: center; }
+.text-gold { color: var(--color-gold); }
+.font-heading { font-family: var(--font-heading); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  :root {
+    --text-5xl: 2.5rem;
+    --text-4xl: 2rem;
+    --space-4xl: 3rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* ===== APP LAYOUT ===== */
+.app {
+  min-height: 100vh;
+}
+
+/* ===== TRANSICIONES FLUIDAS ENTRE SECCIONES ===== */
+/* Transición suave de Hero a Sobre Mi */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(180deg, 
+    rgba(63, 51, 81, 0) 0%, 
+    rgba(63, 51, 81, 0.3) 30%,
+    rgba(63, 51, 81, 0.7) 70%,
+    rgba(63, 51, 81, 1) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Transición suave de Sobre Mi a Proyectos */
+.sobre-mi::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, 
+    rgba(63, 51, 81, 0) 0%, 
+    rgba(47, 42, 67, 0.3) 20%,
+    rgba(35, 33, 50, 0.6) 50%,
+    rgba(31, 29, 54, 0.85) 80%,
+    rgba(31, 29, 54, 1) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Transición suave de Proyectos a Contacto */
+.proyectos::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(180deg, 
+    rgba(31, 29, 54, 0) 0%, 
+    rgba(31, 29, 54, 0.3) 30%,
+    rgba(31, 29, 54, 0.7) 70%,
+    rgba(31, 29, 54, 1) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}

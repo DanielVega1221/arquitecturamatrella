@@ -1,0 +1,120 @@
+/* ================================================
+   NAVBAR - DISEÑO LIMPIO Y MINIMALISTA
+   ================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px 0;
+}
+
+/* Navbar oculto al inicio */
+.navbar--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* Navbar visible al hacer scroll */
+.navbar--visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar--scrolled {
+  background: rgba(31, 29, 54, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(233, 166, 166, 0.1);
+  padding: 12px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar__logo:hover {
+  color: var(--color-pink);
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-pink);
+  transition: width 0.3s ease;
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+.navbar__link:hover {
+  color: var(--color-pink);
+}
+
+.navbar__cta {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-mauve) 0%, var(--color-pink) 100%);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(134, 72, 121, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar__menu {
+    display: none;
+  }
+
+  .navbar__cta {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
